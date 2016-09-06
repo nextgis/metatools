@@ -37,7 +37,7 @@ from metatoolssettings import MetatoolsSettings
 from standard import MetaInfoStandard
 from error_handler import ErrorHandler
 from metadata_provider import MetadataProvider
-import resources
+import resources_rc
 
 minQtVersion = '4.6.0'
 currentPath = os.path.abspath(os.path.dirname(__file__))
@@ -48,9 +48,9 @@ class MetatoolsPlugin:
     self.loadingCanceled = False
 
     try:
-      self.QgisVersion = unicode(QGis.QGIS_VERSION_INT)
+      self.QgisVersion = unicode(Qgis.QGIS_VERSION_INT)
     except:
-      self.QgisVersion = unicode(QGis.qgisVersion)[0]
+      self.QgisVersion = unicode(Qgis.qgisVersion)[0]
 
     # get plugin folder (more simple version of original plugin)
     self.pluginPath = currentPath
